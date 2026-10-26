@@ -1,6 +1,5 @@
 import json
 import pathlib
-import os
 import joblib
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
@@ -13,7 +12,7 @@ MODEL_DIR = pathlib.Path("model")
 N_ESTIMATORS = 10  # number of trees in the forest
 MAX_DEPTH = None  # maximum depth of each tree; None means no limit
 RANDOM_STATE = 42  # fixed seed
-TEST_SIZE = 0  # test split fraction
+TEST_SIZE = 0.19  # test split fraction
 
 
 def load_data():

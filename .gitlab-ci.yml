@@ -4,7 +4,6 @@
 workflow:
   rules:
     - if: $CI_COMMIT_BRANCH
-    - allow_failure: true
 # Stages run one after the other. Jobs in the same stage run in parallel.
 stages:
   - lint
@@ -35,6 +34,7 @@ test:
   stage: test
   script:
     - uv run pytest tests/ -v
+  needs: lint
 
 # Train the model. Only runs when you click the `run` button in the interface.
 train:
